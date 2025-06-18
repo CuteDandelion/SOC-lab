@@ -4,7 +4,10 @@ This project integrates **Invoke-AtomicRunner** (from Atomic Red Team), **Splunk
 
 *Note : This lab is still in progress & changes may still apply.
 
-## Lab Overview
+## Planned Lab Design
+
+![Lab Overview](https://github.com/user-attachments/assets/d318bde9-c5d0-4b2f-92fd-19144a763e56)
+
 
 ## Prerequisites
 
