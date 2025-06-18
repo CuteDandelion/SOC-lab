@@ -1,0 +1,25 @@
+title: Detect Impair Defenses (commandprompt)
+id: 4ad74d01-f48c-42d0-b88c-b31efa4d2262
+status: test
+description: Tamper with firewall, enabling "RDP" & "SMB" CMD
+author: Justin Chin
+date: 2025-06-16
+modified: 2025-06-16
+tags:
+    - attack.defense-evasion
+    - detection.threat-hunting
+    - attack.T1562.004
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_img:
+        - Image|endswith: '\cmd.exe'
+        - OriginalFileName: 'Cmd.Exe'
+    selection_cmdline:
+        - CommandLine|contains:
+              - 'netsh advfirewall firewall set rule group="*" new enable=Yes'
+    condition: all of selection_*
+falsepositives:
+    - Unlikely
+level: High

@@ -1,0 +1,28 @@
+title: Detect Ingress Tool Transfer
+id: 4ad74d01-f48c-42d0-b88c-b31efa4d2262
+status: test
+description: Detects T1105 - Usage of 'iwr' or "Invoke-WebRequest" to download a file from the web.
+author: Justin Chin
+date: 2025-06-17
+modified: 2025-06-17
+tags:
+    - attack.CommandAndControl
+    - detection.threat-hunting
+    - mitre.T1105
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_img:
+        - Image|endswith: '\cmd.exe'
+        - OriginalFileName: 'Cmd.Exe'
+    selection_cmdline:
+        - CommandLine|contains:
+              - 'iwr'
+              - 'Invoke-WebRequest'
+              - 'https://github.com/redcanaryco/atomic-red-team/'
+              - 'c:\Atomic.dll'
+    condition: all of selection_* 
+falsepositives:
+    - Unknown
+level: low
