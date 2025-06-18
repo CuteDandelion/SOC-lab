@@ -133,3 +133,4 @@ This project integrates **Invoke-AtomicRunner** (from Atomic Red Team), **Splunk
 - [Atomic Red Team GitHub](https://github.com/redcanaryco/atomic-red-team)
 - [Olaf Hartung's Sysmon Configuration](https://github.com/olafhartong/sysmon-modular)
 - [Splunk SDK for Python](https://dev.splunk.com/enterprise/docs/devtools/python/sdk-python/)
+- [Invoke-atomicredteam](https://github.com/redcanaryco/invoke-atomicredteam)
